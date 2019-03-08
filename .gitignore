@@ -1,4 +1,26 @@
 .vs/
+<<<<<<< HEAD
 NewAgeClm/bin/
 NewAgeClm/obj/Debug/netcoreapp2.1/NewAgeClm.csproj.CopyComplete
 NewAgeClm/obj/
+=======
+NewAgeClm/obj/Debug/netcoreapp2.1/UserSecretsAssemblyInfo.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Home/Privacy.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Home/Contact.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Views/Home/About.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/Razor/Areas/Identity/Pages/_ViewStart.g.cshtml.cs
+NewAgeClm/obj/Debug/netcoreapp2.1/NewAgeClm.csproj.FileListAbsolute.txt
+NewAgeClm/obj/Debug/netcoreapp2.1/NewAgeClm.csproj.CopyComplete
+NewAgeClm/obj/Debug/netcoreapp2.1/NewAgeClm.RazorTargetAssemblyInfo.cs
+NewAgeClm/bin/Debug/netcoreapp2.1/NewAgeClm.runtimeconfig.json
+NewAgeClm/bin/Debug/netcoreapp2.1/NewAgeClm.runtimeconfig.dev.json
+NewAgeClm/bin/Debug/netcoreapp2.1/NewAgeClm.deps.json
+>>>>>>> develop
