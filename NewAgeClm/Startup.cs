@@ -66,8 +66,9 @@ namespace NewAgeClm
 			app.UseMvc(routes =>
 			{
 				routes.MapRoute(
-					name: "default",
-					template: "{controller=Home}/{action=Index}/{id?}");
+				  name: "areas",
+				  template: "{area=RegularUser}/{controller=Home}/{action=Index}/{id?}"
+				);
 			});
 		}
 	}

@@ -8,6 +8,7 @@ using NewAgeClm.Models;
 
 namespace NewAgeClm.Controllers
 {
+	[Area("RegularUser")]
 	public class HomeController : Controller
 	{
 		public IActionResult Index()

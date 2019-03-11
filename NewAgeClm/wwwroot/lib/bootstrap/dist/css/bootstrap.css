@@ -3053,7 +3053,7 @@ input[type="button"].btn-block {
 .dropdown-toggle:empty::after {
   margin-left: 0;
 }
-
+/* - original bootstrap
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -3072,7 +3072,28 @@ input[type="button"].btn-block {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
+}*/
+
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 10rem;
+	padding: 0.5rem 0;
+	margin: 0.125rem 0 0;
+	font-size: 1rem;
+	color: #212529;
+	text-align: left;
+	list-style: none;
+	background-color: #343A40;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 0.25rem;
 }
+
 
 .dropdown-menu-left {
   right: auto;
@@ -3225,7 +3246,7 @@ input[type="button"].btn-block {
   overflow: hidden;
   border-top: 1px solid #e9ecef;
 }
-
+/* original
 .dropdown-item {
   display: block;
   width: 100%;
@@ -3238,7 +3259,19 @@ input[type="button"].btn-block {
   background-color: transparent;
   border: 0;
 }
-
+	*/
+.dropdown-item {
+	display: block;
+	width: 100%;
+	padding: 0.25rem 1.5rem;
+	clear: both;
+	font-weight: 400;
+	color: #fff;
+	text-align: inherit;
+	white-space: nowrap;
+	background-color: transparent;
+	border: 0;
+}
 .dropdown-item:hover, .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
