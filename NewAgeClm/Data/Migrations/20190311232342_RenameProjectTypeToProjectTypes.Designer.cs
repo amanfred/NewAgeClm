@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NewAgeClm.Data;
 
 namespace NewAgeClm.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190311232342_RenameProjectTypeToProjectTypes")]
+    partial class RenameProjectTypeToProjectTypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -196,13 +198,9 @@ namespace NewAgeClm.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(200);
 
-                    b.Property<int>("PriorityId");
-
                     b.Property<int>("ProjectTypeId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PriorityId");
 
                     b.HasIndex("ProjectTypeId");
 
@@ -221,22 +219,7 @@ namespace NewAgeClm.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProjectTypes");
-                });
-
-            modelBuilder.Entity("NewAgeClm.Models.Priorities", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Priorities");
+                    b.ToTable("ProjectType");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -286,12 +269,7 @@ namespace NewAgeClm.Data.Migrations
 
             modelBuilder.Entity("NewAgeClm.Areas.RegularUser.Models.Projects", b =>
                 {
-                    b.HasOne("NewAgeClm.Models.Priorities", "Priorities")
-                        .WithMany()
-                        .HasForeignKey("PriorityId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("NewAgeClm.Areas.RegularUser.Models.ProjectTypes", "ProjectTypes")
+                    b.HasOne("NewAgeClm.Areas.RegularUser.Models.ProjectTypes", "ProjectType")
                         .WithMany()
                         .HasForeignKey("ProjectTypeId")
                         .OnDelete(DeleteBehavior.Cascade);

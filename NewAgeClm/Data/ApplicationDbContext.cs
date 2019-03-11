@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using NewAgeClm.Areas.RegularUser.Models;
+using NewAgeClm.Models;
 
 namespace NewAgeClm.Data
 {
@@ -12,5 +14,9 @@ namespace NewAgeClm.Data
 			: base(options)
 		{
 		}
+
+		public DbSet<Projects> Projects { get; set; }
+		public DbSet<ProjectTypes> ProjectTypes { get; set; }
+		public DbSet<Priorities> Priorities { get; set; }
 	}
 }
