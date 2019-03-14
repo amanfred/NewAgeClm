@@ -29,5 +29,16 @@ namespace NewAgeClm.Areas.RegularUser.Models
 
 		[ForeignKey("PriorityId")]
 		public virtual Priorities Priorities { get; set; } //If "virtual" keyword is provided, this will not be added to the database
+
+		[Required]
+		public string Reporter { get; set; }
+
+		public string Assignee { get; set; }
+
+		[Display(Name = "Labels")]
+		public int LabelId { get; set; }
+
+		[ForeignKey("LabelId")]
+		public virtual Labels Labels { get; set; } //If "virtual" keyword is provided, this will not be added to the database
 	}
 }
