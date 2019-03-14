@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace NewAgeClm.Models
 {
-	public class ProjectTypes
+	public class Statuses
 	{
-		[Required]
 		public int Id { get; set; }
 
-		[Required, StringLength(20, MinimumLength =2)]
+		[Required]
+		public int Code { get; set; }
+
+		[Required]
 		public string Name { get; set; }
 	}
 }

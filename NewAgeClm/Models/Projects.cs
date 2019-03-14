@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 
-namespace NewAgeClm.Areas.RegularUser.Models
+namespace NewAgeClm.Models
 {
 	public class Projects
 	{
@@ -40,5 +40,11 @@ namespace NewAgeClm.Areas.RegularUser.Models
 
 		[ForeignKey("LabelId")]
 		public virtual Labels Labels { get; set; } //If "virtual" keyword is provided, this will not be added to the database
+
+		[Display(Name = "Status")]
+		public int StatusId { get; set; }
+
+		[ForeignKey("StatusId")]
+		public virtual Statuses Statuses { get; set; } //If "virtual" keyword is provided, this will not be added to the database
 	}
 }

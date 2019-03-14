@@ -19,5 +19,6 @@ namespace NewAgeClm.Data
 		public DbSet<ProjectTypes> ProjectTypes { get; set; }
 		public DbSet<Priorities> Priorities { get; set; }
 		public DbSet<Labels> Labels { get; set; }
+		public DbSet<Statuses> Statuses { get; set; }
 	}
 }
