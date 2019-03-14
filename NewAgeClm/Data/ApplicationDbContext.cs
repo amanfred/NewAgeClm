@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using NewAgeClm.Areas.RegularUser.Models;
 using NewAgeClm.Models;
 
 namespace NewAgeClm.Data

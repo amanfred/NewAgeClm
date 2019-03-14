@@ -19,7 +19,8 @@ namespace NewAgeClm.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            return View(db.ProjectTypes.ToList());
+            return View(db.ProjectTypes.ToList());			
         }
-    }
+
+	}
 }

@@ -1,8 +1,41 @@
 ﻿@model IEnumerable<NewAgeClm.Models.ProjectTypes>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Project types";
 }
+<br />
 
-<h2>Index</h2>
+<div class="row">
+	<div class="col-6">
+		<h2 class="text-info">Project types</h2>
+	</div>
+	<div class="col-6 text-right">
+		<a asp-action="Create" class="btn btn-info">&nbsp; New project type</a>
+	</div>
+</div>
+
+<br />
+<div>
+	<table class="table table-striped border">
+		<tr class="table-info">
+			<th>
+				@Html.DisplayNameFor(m=>m.Name) <!--Html helper-->
+			</th>
+			<th>
+
+			</th>
+		</tr>
+		@foreach(var type in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(m=>type.Name)
+				</td>
+				<td>
+					EDIT DELETE UPDATE
+				</td>
+			</tr>
+		}
+	</table>
+</div>
 
