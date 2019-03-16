@@ -1,16 +1,17 @@
 ﻿@model NewAgeClm.Models.ViewModel.ProjectAttributesViewModel
+
 @{
-	ViewData["Title"] = "Index";
+	ViewData["Title"] = "Project attributes";
 }
 
 <br />
-
+@{ControllerWIthId controller = new ControllerWIthId();}
 <div class="row">
 	<div class="col-6">
 		<h2 class="text-info">Project types</h2>
 	</div>
 	<div class="col-6 text-right">
-		<a asp-action="Create" class="btn btn-info">&nbsp; New project type</a>
+		<a asp-controller="ProjectTypes" asp-action="Create" class="btn btn-info">&nbsp; New project type</a>
 	</div>
 </div>
 
@@ -19,22 +20,26 @@
 	<table class="table table-striped border">
 		<tr class="table-info">
 			<th>
-					@Html.DisplayNameFor(m => m.ProjectTypes) <!--Html helper-->
+				@Html.DisplayNameFor(m => m.ProjectTypes) <!--Html helper-->
 			</th>
-			<th>
-
-			</th>
+			<th>Id</th>
+			<th></th>
+			<th></th>
 		</tr>
+		@{ controller.ControllerName = "ProjectTypes";}
 		@foreach (var type in Model.ProjectTypes)
 		{
+			controller.Id = type.Id;
 			<tr>
 				<td>
 					@Html.DisplayFor(m => type.Name)
 				</td>
 				<td>
-					<partial name="_TableButtonsPartial" model="type.Id" />
+					@Html.DisplayFor(m => type.Id)
 				</td>
+				<td>
+					<partial name="_TableButtonsWithControllerPartial" model="controller" />								
 			</tr>
-		}
+		}		
 	</table>
 </div>

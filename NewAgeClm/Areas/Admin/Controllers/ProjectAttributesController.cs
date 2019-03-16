@@ -33,28 +33,6 @@ namespace NewAgeClm.Areas.Admin.Controllers
         {
 			
             return View(ProjectAttributesVM);
-        }
-
-		//GET
-		public IActionResult Create()
-		{
-			return View();
-		}
-
-		//POST
-		[HttpPost]
-		[AutoValidateAntiforgeryToken]
-		public async Task<IActionResult> Create(ProjectTypes projectTypes)
-		{
-			if(ModelState.IsValid)
-			{
-				/*projectTypes.Name = projectTypes.Name.ToLower();
-				projectTypes.Name.First().ToString().ToUpper();*/
-				db.Add(projectTypes);
-				await db.SaveChangesAsync();
-				return RedirectToAction(nameof(Index));
-			}
-			return View(projectTypes);
-		}
-    }
+        }	
+	}
 }

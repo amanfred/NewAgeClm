@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<NewAgeClm.Models.ProjectTypes>
 
 @{
-    ViewData["Title"] = "Project types";
+	ViewData["Title"] = "Project types";
 }
 <br />
-
+@{ControllerWIthId controller = new ControllerWIthId();}
 <div class="row">
 	<div class="col-6">
 		<h2 class="text-info">Project types</h2>
@@ -19,20 +19,21 @@
 	<table class="table table-striped border">
 		<tr class="table-info">
 			<th>
-				@Html.DisplayNameFor(m=>m.Name) <!--Html helper-->
+				@Html.DisplayNameFor(m => m.Name) <!--Html helper-->
 			</th>
-			<th>
-
-			</th>
+			<th></th>
+			<th></th>
 		</tr>
-		@foreach(var type in Model)
+		@{ controller.ControllerName = "ProjectTypes";}
+		@foreach (var type in Model)
 		{
+			controller.Id = type.Id;
 			<tr>
 				<td>
-					@Html.DisplayFor(m=>type.Name)
+					@Html.DisplayFor(m => type.Name)
 				</td>
 				<td>
-					EDIT DELETE UPDATE
+					<partial name="_TableButtonsWithControllerPartial" model="controller" />
 				</td>
 			</tr>
 		}
