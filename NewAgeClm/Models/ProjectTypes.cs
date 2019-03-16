@@ -11,7 +11,7 @@ namespace NewAgeClm.Models
 		[Required]
 		public int Id { get; set; }
 
-		[Required, StringLength(20, MinimumLength =2)]
+		[Required, StringLength(20, MinimumLength = 2)]
 		public string Name { get; set; }
 	}
 }

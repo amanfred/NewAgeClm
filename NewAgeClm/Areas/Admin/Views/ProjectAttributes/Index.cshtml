@@ -1,0 +1,40 @@
+﻿@model NewAgeClm.Models.ViewModel.ProjectAttributesViewModel
+@{
+	ViewData["Title"] = "Index";
+}
+
+<br />
+
+<div class="row">
+	<div class="col-6">
+		<h2 class="text-info">Project types</h2>
+	</div>
+	<div class="col-6 text-right">
+		<a asp-action="Create" class="btn btn-info">&nbsp; New project type</a>
+	</div>
+</div>
+
+<br />
+<div>
+	<table class="table table-striped border">
+		<tr class="table-info">
+			<th>
+					@Html.DisplayNameFor(m => m.ProjectTypes) <!--Html helper-->
+			</th>
+			<th>
+
+			</th>
+		</tr>
+		@foreach (var type in Model.ProjectTypes)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(m => type.Name)
+				</td>
+				<td>
+					EDIT DELETE UPDATE
+				</td>
+			</tr>
+		}
+	</table>
+</div>
