@@ -12,6 +12,9 @@ namespace NewAgeClm.Models.ViewModel
 
 		[DisplayName("Project Types")]
 		public IEnumerable<ProjectTypes> ProjectTypes { get; set; }
+
 		public IEnumerable<Statuses> Statuses { get; set; }
+
+		public IEnumerable<Priorities> Priorities { get; set; }
 	}
 }

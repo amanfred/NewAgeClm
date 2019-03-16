@@ -8,10 +8,10 @@
 @{ControllerWIthId controller = new ControllerWIthId();}
 <div class="row">
 	<div class="col-6">
-		<h2 class="text-info">Project types</h2>
+		<h2 class="text-info">Types</h2>
 	</div>
 	<div class="col-6 text-right">
-		<a asp-controller="ProjectTypes" asp-action="Create" class="btn btn-info">&nbsp; New project type</a>
+
 	</div>
 </div>
 
@@ -24,7 +24,11 @@
 			</th>
 			<th>Id</th>
 			<th></th>
-			<th></th>
+			<th>
+				<a asp-controller="ProjectTypes" asp-action="Create" class="btn btn-info" style="float:right;">
+					<i class=" fas fa-plus-square"></i>
+				</a>
+			</th>
 		</tr>
 		@{ controller.ControllerName = "ProjectTypes";}
 		@foreach (var type in Model.ProjectTypes)
@@ -38,8 +42,91 @@
 					@Html.DisplayFor(m => type.Id)
 				</td>
 				<td>
-					<partial name="_TableButtonsWithControllerPartial" model="controller" />								
+					<partial name="_TableButtonsWithControllerPartial" model="controller" />
 			</tr>
-		}		
+		}
+	</table>
+</div>
+<hr />
+<br />
+<div class="row">
+	<div class="col-6">
+		<h2 class="text-info">Statuses</h2>
+	</div>
+
+</div>
+
+<br />
+<div>
+	<table class="table table-striped border">
+		<tr class="table-info">
+			<th>
+				@Html.DisplayNameFor(m => m.Statuses) <!--Html helper-->
+			</th>
+			<th>Id</th>
+			<th></th>
+			<th>
+				<a asp-controller="Statuses" asp-action="Create" class="btn btn-info" style="float:right;">
+					<i class=" fas fa-plus-square"></i>
+				</a>
+			</th>
+		</tr>
+		@{ controller.ControllerName = "Statuses";}
+		@foreach (var status in Model.Statuses)
+		{
+			controller.Id = status.Id;
+			<tr>
+				<td>
+					@Html.DisplayFor(m => status.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(m => status.Id)
+				</td>
+				<td>
+					<partial name="_TableButtonsWithControllerPartial" model="controller" />
+			</tr>
+		}
+	</table>
+</div>
+
+<hr />
+<br />
+<div class="row">
+	<div class="col-6">
+		<h2 class="text-info">Priorities</h2>
+	</div>
+
+</div>
+
+<br />
+<div>
+	<table class="table table-striped border">
+		<tr class="table-info">
+			<th>
+				@Html.DisplayNameFor(m => m.Priorities) <!--Html helper-->
+			</th>
+			<th>Id</th>
+			<th></th>
+			<th>
+				<a asp-controller="Priorities" asp-action="Create" class="btn btn-info" style="float:right;">
+					<i class=" fas fa-plus-square"></i>
+				</a>
+			</th>
+		</tr>
+		@{ controller.ControllerName = "Priorities";}
+		@foreach (var priority in Model.Priorities)
+		{
+			controller.Id = priority.Id;
+			<tr>
+				<td>
+					@Html.DisplayFor(m => priority.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(m => priority.Id)
+				</td>
+				<td>
+					<partial name="_TableButtonsWithControllerPartial" model="controller" />
+			</tr>
+		}
 	</table>
 </div>

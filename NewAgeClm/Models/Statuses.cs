@@ -9,8 +9,7 @@ namespace NewAgeClm.Models
 	public class Statuses
 	{
 		public int Id { get; set; }
-
-		[Required]
+		
 		public int Code { get; set; }
 
 		[Required]

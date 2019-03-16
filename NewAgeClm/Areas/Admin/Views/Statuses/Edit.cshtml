@@ -1,4 +1,4 @@
-﻿@model NewAgeClm.Models.ProjectTypes
+﻿@model NewAgeClm.Models.Statuses
 
 @{
 	ViewData["Title"] = "Edit";
@@ -6,7 +6,7 @@
 
 <br />
 <h2 class="text-info">
-	Edit type
+	Edit status
 </h2>
 
 <form method="post" asp-action="Edit">
@@ -26,8 +26,8 @@
 		<!--add two buttons-->
 		<div class="form-group">
 			<input type="submit" class="btn btn-primary" asp-route-id="@Model.Id" value="Update" />
-			<a asp-action="Index" asp-area="Admin" class="btn btn-success">Back to project types list</a>
-			<a asp-action="Index" asp-area="Admin" asp-controller="ProjectAttributes" class="btn btn-success">Back to project attributes lsit</a>
+			<a asp-action="Index" asp-area="Admin" class="btn btn-success">Back to statuses</a>
+			<a asp-action="Index" asp-area="Admin" asp-controller="ProjectAttributes" class="btn btn-success">Back to project attributes list</a>
 		</div>
 	</div>
 </form>

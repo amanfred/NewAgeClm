@@ -1,16 +1,16 @@
-﻿@model IEnumerable<NewAgeClm.Models.ProjectTypes>
+﻿@model IEnumerable<NewAgeClm.Models.Statuses>
 
 @{
-	ViewData["Title"] = "Project types";
+	ViewData["Title"] = "Statuses";
 }
 <br />
 @{ControllerWIthId controller = new ControllerWIthId();}
 <div class="row">
 	<div class="col-6">
-		<h2 class="text-info">Types</h2>
+		<h2 class="text-info">Statuses</h2>
 	</div>
 	<div class="col-6 text-right">
-		<a asp-action="Create" class="btn btn-info">&nbsp; New project type</a>
+		<a asp-action="Create" class="btn btn-info">&nbsp; New status</a>
 	</div>
 </div>
 
@@ -24,13 +24,13 @@
 			<th></th>
 			<th></th>
 		</tr>
-		@{ controller.ControllerName = "ProjectTypes";}
-		@foreach (var type in Model)
+		@{ controller.ControllerName = "Statuses";}
+		@foreach (var status in Model)
 		{
-			controller.Id = type.Id;
+			controller.Id = status.Id;
 			<tr>
 				<td>
-					@Html.DisplayFor(m => type.Name)
+					@Html.DisplayFor(m => status.Name)
 				</td>
 				<td>
 					<partial name="_TableButtonsWithControllerPartial" model="controller" />
@@ -41,3 +41,4 @@
 </div>
 
 <a asp-action="Index" asp-area="Admin" asp-controller="ProjectAttributes" class="btn btn-success">Project attributes list</a>
+
