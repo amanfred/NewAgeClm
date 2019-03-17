@@ -23,7 +23,8 @@ namespace NewAgeClm.Areas.Admin.Controllers
 			ProjectAttributesVM = new ProjectAttributesViewModel
 			{
 				ProjectTypes = db.ProjectTypes.ToList(),
-				Statuses = db.Statuses.ToList()
+				Statuses = db.Statuses.ToList(),
+				Priorities = db.Priorities.ToList()
 			};
 		
 
