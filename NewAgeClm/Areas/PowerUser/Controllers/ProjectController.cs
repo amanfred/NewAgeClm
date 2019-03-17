@@ -32,12 +32,12 @@ namespace NewAgeClm.Areas.PowerUser.Controllers
 				Priorities = db.Priorities.ToList()
 			};
 		}
-/*
+
 		public IActionResult Index()
         {
             return View(db.Projects.ToList());
         }
-		*/
+		
 		// GET: Status/Create
 		public IActionResult Create()
 		{
@@ -62,7 +62,7 @@ namespace NewAgeClm.Areas.PowerUser.Controllers
 					//rename the image to projects id
 					var files = HttpContext.Request.Form.Files;
 					var projectsFromDb = db.Projects.Find(ProjectAttributesVM.Projects.Id);
-
+/*
 					if(files.Count > 0)
 					{
 						//file (image) has been uploaded
@@ -81,7 +81,7 @@ namespace NewAgeClm.Areas.PowerUser.Controllers
 					{
 						//dummy image or do nothing...
 					}
-
+					*/
 					await db.SaveChangesAsync();
 					return RedirectToAction("Index", "Project", new { area = "RegularUser" });
 				}

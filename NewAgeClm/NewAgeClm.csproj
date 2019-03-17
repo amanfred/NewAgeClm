@@ -19,6 +19,7 @@
     <Folder Include="Areas\RegularUser\Data\" />
     <Folder Include="Areas\RegularUser\Models\" />
     <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\images\ProjectImage\" />
   </ItemGroup>
 
   <ItemGroup>

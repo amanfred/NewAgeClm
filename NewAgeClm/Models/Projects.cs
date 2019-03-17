@@ -49,7 +49,7 @@ namespace NewAgeClm.Models
 		public virtual Statuses Statuses { get; set; } 
 
 		[StringLength(3, MinimumLength = 3)]
-		[RegularExpression(@"/^[A-Za-z]+$/")]
+	//	[RegularExpression(@"/^[A-Za-z]+$/")]
 		public string Key { get; set; }
 
 		[Display(Name = "Project Lead")]
@@ -61,7 +61,7 @@ namespace NewAgeClm.Models
 		[Display(Name = "Category")]
 		public virtual Categories Categories { get; set; }
 
-		public string Image { get; set; }
+		//public string Image { get; set; }
 
 
 	}
