@@ -46,5 +46,20 @@ namespace NewAgeClm.Models
 
 		[ForeignKey("StatusId")]
 		public virtual Statuses Statuses { get; set; } //If "virtual" keyword is provided, this will not be added to the database
+
+		[StringLength(3, MinimumLength = 3)]
+		[RegularExpression("/^[A-Za-z]+$/")]
+		public string Key { get; set; }
+
+		[Display(Name = "Project Lead")]
+		public string ProjectLead { get; set; }
+
+		[Display(Name = "Category")]
+		public int CategoryId { get; set; }
+
+		[ForeignKey("CategoryId")]
+		public virtual Categories Categories { get; set; } //If "virtual" keyword is provided, this will not be added to the database
+
+
 	}
 }
