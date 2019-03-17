@@ -32,7 +32,7 @@
 					<div class="dropdown-menu" aria-labelledby="projectsMenuLink">
 						<a class="dropdown-item" href="#">Create new project</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">View all projects</a>
+						<a class="dropdown-item" asp-area="RegularUser" asp-controller="Project" asp-action="Index">View all projects</a>
 						<a class="dropdown-item" asp-area="Admin" asp-controller="ProjectAttributes" asp-action="Index">Manage project attributes</a>
 					</div>
 				</li>

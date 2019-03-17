@@ -1,0 +1,56 @@
+﻿@model IEnumerable<NewAgeClm.Models.Projects>
+@{
+	ViewData["Title"] = "Index";
+}
+
+
+
+<br />
+@{ControllerWIthId controller = new ControllerWIthId();}
+<div class="row">
+	<div class="col-6">
+		<h2 class="text-info">Project list</h2>
+	</div>
+	<div class="col-6 text-right">
+
+	</div>
+</div>
+
+<br />
+<div>
+	<table class="table table-striped border">
+		<tr class="table-info">
+			<th>
+				@Html.DisplayNameFor(m => m.Name) <!--Html helper-->
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.Key)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.ProjectTypes)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.Categories)
+			</th>
+			<th>
+				<a asp-controller="Project" asp-area="PowerUser" asp-action="Create" class="btn btn-info" style="float:right;">
+					<i class=" fas fa-plus-square"></i>
+				</a>
+			</th>
+		</tr>
+		@{ controller.ControllerName = "Project";}
+		@foreach (var project in Model)
+		{
+			//controller.Id = type.Id;
+			<tr>
+				<td>
+					@Html.DisplayFor(m => project.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(m => project.Key)
+				</td>
+				
+			</tr>
+		}
+	</table>
+</div>

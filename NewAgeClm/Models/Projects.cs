@@ -14,21 +14,22 @@ namespace NewAgeClm.Models
 		public int Id { get; set; }
 
 		[Required, StringLength(200, MinimumLength =5)]
+		[Display(Name="Project")]
 		public string Name { get; set; }
 
 		public string Description { get; set; }
 
-		[Display(Name = "Type")]
 		public int ProjectTypeId { get; set; }
 
 		[ForeignKey("ProjectTypeId")]
+		[Display(Name = "Type")]
 		public virtual ProjectTypes ProjectTypes { get; set; } //If "virtual" keyword is provided, this will not be added to the database
 
 		[Display(Name = "Priority")]
 		public int PriorityId { get; set; }
 
 		[ForeignKey("PriorityId")]
-		public virtual Priorities Priorities { get; set; } //If "virtual" keyword is provided, this will not be added to the database
+		public virtual Priorities Priorities { get; set; } 
 
 		[Required]
 		public string Reporter { get; set; }
@@ -39,26 +40,28 @@ namespace NewAgeClm.Models
 		public int LabelId { get; set; }
 
 		[ForeignKey("LabelId")]
-		public virtual Labels Labels { get; set; } //If "virtual" keyword is provided, this will not be added to the database
+		public virtual Labels Labels { get; set; } 
 
 		[Display(Name = "Status")]
 		public int StatusId { get; set; }
 
 		[ForeignKey("StatusId")]
-		public virtual Statuses Statuses { get; set; } //If "virtual" keyword is provided, this will not be added to the database
+		public virtual Statuses Statuses { get; set; } 
 
 		[StringLength(3, MinimumLength = 3)]
-		[RegularExpression("/^[A-Za-z]+$/")]
+		[RegularExpression(@"/^[A-Za-z]+$/")]
 		public string Key { get; set; }
 
 		[Display(Name = "Project Lead")]
 		public string ProjectLead { get; set; }
 
-		[Display(Name = "Category")]
 		public int CategoryId { get; set; }
 
 		[ForeignKey("CategoryId")]
-		public virtual Categories Categories { get; set; } //If "virtual" keyword is provided, this will not be added to the database
+		[Display(Name = "Category")]
+		public virtual Categories Categories { get; set; }
+
+		public string Image { get; set; }
 
 
 	}
