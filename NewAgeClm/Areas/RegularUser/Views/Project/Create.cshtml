@@ -1,4 +1,5 @@
 ﻿@model NewAgeClm.Models.ViewModel.ProjectAttributesViewModel
+@using NewAgeClm.Extensions
 
 @{
 	ViewData["Title"] = "Create";
@@ -49,6 +50,39 @@
 			</div>
 			<span asp-validation-for="Projects.Reporter" class="text-danger"></span>
 		</div>
+		<div class="form-group row">
+			<div class="col-2">
+				<label asp-for="Projects.ProjectTypes"></label>
+			</div>
+			<div class="col-5">
+				<select asp-for="@Model.Projects.ProjectTypeId" asp-items="Model.ProjectTypes.ToSelectListItem(Model.Projects.ProjectTypeId)" class="form-control"></select>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-2">
+				<label asp-for="Projects.Statuses"></label>
+			</div>
+			<div class="col-5">
+				<select asp-for="@Model.Projects.StatusId" asp-items="Model.Statuses.ToSelectListItem(Model.Projects.StatusId)" class="form-control"></select>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-2">
+				<label asp-for="Projects.Priorities"></label>
+			</div>
+			<div class="col-5">
+				<select asp-for="@Model.Projects.PriorityId" asp-items="Model.Priorities.ToSelectListItem(Model.Projects.PriorityId)" class="form-control"></select>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-2">
+				<label asp-for="Projects.Labels"></label>
+			</div>
+			<div class="col-5">
+				<select asp-for="@Model.Projects.LabelId" asp-items="Model.Labels.ToSelectListItem(Model.Projects.LabelId)" class="form-control"></select>
+			</div>
+		</div>
+
 		<div class="form-group row">
 			<div class="col-2">
 				<label asp-for="Projects.Description"></label>

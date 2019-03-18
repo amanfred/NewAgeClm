@@ -26,7 +26,9 @@ namespace NewAgeClm.Areas.RegularUser.Controllers
 			{
 				ProjectTypes = db.ProjectTypes.ToList(),
 				Statuses = db.Statuses.ToList(),
-				Priorities = db.Priorities.ToList()
+				Priorities = db.Priorities.ToList(),
+				Labels = db.Labels.ToList(),
+				Projects = new Models.Projects()
 			};
 		}
 
@@ -56,7 +58,7 @@ namespace NewAgeClm.Areas.RegularUser.Controllers
 				if (ModelState.IsValid)
 				{
 					ProjectAttributesVM.Projects.Key.ToUpper();
-					ProjectAttributesVM.Projects.ProjectTypeId = 17;
+					
 					db.Add(ProjectAttributesVM.Projects);
 					await db.SaveChangesAsync();
 

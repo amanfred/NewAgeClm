@@ -16,5 +16,7 @@ namespace NewAgeClm.Models.ViewModel
 		public IEnumerable<Statuses> Statuses { get; set; }
 
 		public IEnumerable<Priorities> Priorities { get; set; }
+
+		public IEnumerable<Labels> Labels { get; set; }
 	}
 }
