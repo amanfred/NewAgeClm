@@ -1,0 +1,44 @@
+﻿@model IEnumerable<NewAgeClm.Models.Labels>
+
+@{
+	ViewData["Title"] = "Labels";
+}
+<br />
+@{ControllerWIthId controller = new ControllerWIthId();}
+<div class="row">
+	<div class="col-6">
+		<h2 class="text-info">Labels</h2>
+	</div>
+	<div class="col-6 text-right">
+		<a asp-action="Create" class="btn btn-info">&nbsp; New label</a>
+	</div>
+</div>
+
+<br />
+<div>
+	<table class="table table-striped border">
+		<tr class="table-info">
+			<th>
+				@Html.DisplayNameFor(m => m.Name) <!--Html helper-->
+			</th>
+			<th></th>
+			<th></th>
+		</tr>
+		@{ controller.ControllerName = "Labels";}
+		@foreach (var status in Model)
+		{
+			controller.Id = status.Id;
+			<tr>
+				<td>
+					@Html.DisplayFor(m => status.Name)
+				</td>
+				<td>
+					<partial name="_TableButtonsWithControllerPartial" model="controller" />
+				</td>
+			</tr>
+		}
+	</table>
+</div>
+
+<a asp-action="Index" asp-area="Admin" asp-controller="ProjectAttributes" class="btn btn-success">Project attributes list</a>
+

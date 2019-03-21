@@ -24,6 +24,9 @@
 				@Html.DisplayNameFor(m => m.Name) <!--Html helper-->
 			</th>
 			<th>
+				@Html.DisplayNameFor(m => m.Statuses)
+			</th>
+			<th>
 				@Html.DisplayNameFor(m => m.Key)
 			</th>
 			<th>
@@ -31,6 +34,9 @@
 			</th>
 			<th>
 				@Html.DisplayNameFor(m => m.Categories)
+			</th>
+			<th>
+				@Html.DisplayNameFor(m => m.ProjectLead)
 			</th>
 			<th>
 				<a asp-controller="Project" asp-area="RegularUser" asp-action="Create" class="btn btn-info" style="float:right;">
@@ -42,15 +48,29 @@
 		@foreach (var project in Model)
 		{
 			//controller.Id = type.Id;
-			<tr>
-				<td>
-					@Html.DisplayFor(m => project.Name)
-				</td>
-				<td>
-					@Html.DisplayFor(m => project.Key)
-				</td>
-				
-			</tr>
+		<tr>
+			<td>
+				<a asp-controller="Project" asp-area="RegularUser" asp-action="Edit" asp-route-id="@project.Id">
+				@Html.DisplayFor(m => project.Name)
+				</a>
+			</td>
+			<td>
+				@Html.DisplayFor(m => project.Statuses.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(m => project.Key)
+			</td>
+			<td>
+				@Html.DisplayFor(m => project.ProjectTypes.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(m => project.Categories.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(m => project.ProjectLead)
+			</td>
+			<td></td>
+		</tr>
 		}
 	</table>
 </div>

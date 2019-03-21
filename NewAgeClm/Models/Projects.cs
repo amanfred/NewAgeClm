@@ -46,13 +46,14 @@ namespace NewAgeClm.Models
 		public int StatusId { get; set; }
 
 		[ForeignKey("StatusId")]
+		[Display(Name = "Status")]
 		public virtual Statuses Statuses { get; set; } 
 
 		[StringLength(3, MinimumLength = 3)]
 	//	[RegularExpression(@"/^[A-Za-z]+$/")]
 		public string Key { get; set; }
 
-		[Display(Name = "Project Lead")]
+		[Display(Name = "Lead")]
 		public string ProjectLead { get; set; }
 
 		public int CategoryId { get; set; }

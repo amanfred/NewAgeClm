@@ -28,6 +28,7 @@ namespace NewAgeClm.Areas.RegularUser.Controllers
 				Statuses = db.Statuses.ToList(),
 				Priorities = db.Priorities.ToList(),
 				Labels = db.Labels.ToList(),
+				Categories = db.Categories.ToList(),
 				Projects = new Models.Projects()
 			};
 		}
@@ -38,6 +39,8 @@ namespace NewAgeClm.Areas.RegularUser.Controllers
 				Include(m => m.ProjectTypes).
 				Include(m => m.Statuses).
 				Include(m => m.Priorities).
+				Include(m => m.Categories).
+				Include(m => m.Labels).
 				ToListAsync();
 			return View(projects);
 		}
@@ -99,6 +102,31 @@ namespace NewAgeClm.Areas.RegularUser.Controllers
 				return View(e.InnerException.Message);
 			}
 		}
-				
+
+		// GET: Status/Create
+		public async Task<IActionResult> Edit(int? id)
+		{
+
+			if (id == null)
+				return NotFound();
+			if (id < 0)
+				return NotFound();
+
+			//	var project = await db.Projects.FindAsync(id);
+			ProjectAttributesVM.Projects = await db.Projects.
+				Include(m => m.ProjectTypes).
+				Include(m => m.Statuses).
+				Include(m => m.Priorities).
+				Include(m => m.Categories).
+				Include(m => m.Labels).
+				SingleOrDefaultAsync(m => m.Id == id);
+			if (ProjectAttributesVM.Projects == null)
+				return NotFound();
+
+			//return View(label);
+			return View(ProjectAttributesVM);
+		}
+
+
 	}
 }

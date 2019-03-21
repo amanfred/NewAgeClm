@@ -130,3 +130,45 @@
 		}
 	</table>
 </div>
+
+<hr />
+<br />
+<div class="row">
+	<div class="col-6">
+		<h2 class="text-info">Labels</h2>
+	</div>
+
+</div>
+
+<br />
+<div>
+	<table class="table table-striped border">
+		<tr class="table-info">
+			<th>
+				@Html.DisplayNameFor(m => m.Labels) <!--Html helper-->
+			</th>
+			<th>Id</th>
+			<th></th>
+			<th>
+				<a asp-controller="Labels" asp-action="Create" class="btn btn-info" style="float:right;">
+					<i class=" fas fa-plus-square"></i>
+				</a>
+			</th>
+		</tr>
+		@{ controller.ControllerName = "Labels";}
+		@foreach (var label in Model.Labels)
+		{
+			controller.Id = label.Id;
+			<tr>
+				<td>
+					@Html.DisplayFor(m => label.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(m => label.Id)
+				</td>
+				<td>
+					<partial name="_TableButtonsWithControllerPartial" model="controller" />
+			</tr>
+		}
+	</table>
+</div>

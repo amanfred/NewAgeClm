@@ -24,7 +24,10 @@ namespace NewAgeClm.Areas.Admin.Controllers
 			{
 				ProjectTypes = db.ProjectTypes.ToList(),
 				Statuses = db.Statuses.ToList(),
-				Priorities = db.Priorities.ToList()
+				Priorities = db.Priorities.ToList(),
+				Labels = db.Labels.ToList(),
+				Categories = db.Categories.ToList(),
+				Projects = new Projects()
 			};
 		
 

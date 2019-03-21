@@ -18,5 +18,8 @@ namespace NewAgeClm.Models.ViewModel
 		public IEnumerable<Priorities> Priorities { get; set; }
 
 		public IEnumerable<Labels> Labels { get; set; }
+
+		public IEnumerable<Categories> Categories { get; set; }
 	}
+
 }
