@@ -103,7 +103,7 @@ namespace NewAgeClm.Areas.RegularUser.Controllers
 			}
 		}
 
-		// GET: Status/Create
+		// GET: Edit
 		public async Task<IActionResult> Edit(int? id)
 		{
 
@@ -122,11 +122,20 @@ namespace NewAgeClm.Areas.RegularUser.Controllers
 				SingleOrDefaultAsync(m => m.Id == id);
 			if (ProjectAttributesVM.Projects == null)
 				return NotFound();
+			var typeId = ProjectAttributesVM.Projects.ProjectTypeId;
+
+			if (typeId == 21 || typeId == 24)
+				ProjectAttributesVM.ProjectTypes = ProjectAttributesVM.ProjectTypes.Where(m => m.Id == 21 || m.Id == 24);
 
 			//return View(label);
 			return View(ProjectAttributesVM);
 		}
 
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Edit(int id)
+		{
 
+		}
 	}
 }
